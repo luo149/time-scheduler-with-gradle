@@ -37,6 +37,8 @@ public class LabSectionAnalyzer{
         return labSectionList;
     }
 
+    public ArrayList<ArrayList<String>> getData() { return data; }
+
     /*********************************************************************
      *                          Operations
      *********************************************************************/

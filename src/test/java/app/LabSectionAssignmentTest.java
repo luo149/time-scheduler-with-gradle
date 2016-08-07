@@ -14,8 +14,12 @@ import static org.junit.Assert.assertTrue;
  */
 public class LabSectionAssignmentTest {
 
-    @Test
-    public void EachGTAShouldHaveValidDoableSectionList(){
+
+    /**
+     * Run get final lab schedule
+     * @return the created lab section analyzer
+     */
+    public LabSectionAnalyzer runGetFinalLabSchedule(){
         String fileName = "testLabAssignment_GTA.csv";
         TimeAnalyzer analyzer = new TimeAnalyzer();
         // get basic data from the test file
@@ -30,9 +34,17 @@ public class LabSectionAssignmentTest {
 
         // set the doable sections for each gta
         labSectionAnalyzer.getFinalLabSchedule();
+        return labSectionAnalyzer;
+    }
 
+    @Test
+    public void EachGTAShouldHaveValidDoableSectionList(){
+        // set up basic data
+        LabSectionAnalyzer labSectionAnalyzer = runGetFinalLabSchedule();
+        ArrayList<ArrayList<String>> data = labSectionAnalyzer.getData();
         GTA[] gtas = labSectionAnalyzer.getGTAList();
         ArrayList<Integer> doableList;
+
 
         // check each gta has valid doable section list
         int i = 1;
@@ -49,19 +61,9 @@ public class LabSectionAssignmentTest {
 
     @Test
     public void EachSectionShouldHaveValidCandidatesList(){
-        String fileName = "testLabAssignment_GTA.csv";
-        TimeAnalyzer analyzer = new TimeAnalyzer();
-        // get basic data from the test file
-        analyzer.formFullyFilled(fileName);
-        ArrayList<String> timeSlots = analyzer.getTimeSlots();
-        ArrayList<ArrayList<String>> data = analyzer.getData();
-
-        // set the basic data for labSectionAnalyzer
-        LabSectionAnalyzer labSectionAnalyzer = new LabSectionAnalyzer();
-        labSectionAnalyzer.setTimeSlots(timeSlots);
-        labSectionAnalyzer.setData(data);
-
-        labSectionAnalyzer.getFinalLabSchedule();
+        // set up basic data
+        LabSectionAnalyzer labSectionAnalyzer = runGetFinalLabSchedule();
+        ArrayList<ArrayList<String>> data = labSectionAnalyzer.getData();
         // reset the doable sections for each gta after sorting the GTA list
         labSectionAnalyzer.setInfoForEachGTA();
 
@@ -85,20 +87,9 @@ public class LabSectionAssignmentTest {
 
     @Test
     public void FinalLabScheduleShouldBeValid(){
-        String fileName = "testLabAssignment_GTA.csv";
-        TimeAnalyzer analyzer = new TimeAnalyzer();
-        // get basic data from the test file
-        analyzer.formFullyFilled(fileName);
-        ArrayList<String> timeSlots = analyzer.getTimeSlots();
-        ArrayList<ArrayList<String>> data = analyzer.getData();
-
-        // set the basic data for labSectionAnalyzer
-        LabSectionAnalyzer labSectionAnalyzer = new LabSectionAnalyzer();
-        labSectionAnalyzer.setTimeSlots(timeSlots);
-        labSectionAnalyzer.setData(data);
-
-        // generate the final lab schedule
-        labSectionAnalyzer.getFinalLabSchedule();
+        // set basic data
+        LabSectionAnalyzer labSectionAnalyzer = runGetFinalLabSchedule();
+        ArrayList<ArrayList<String>> data = labSectionAnalyzer.getData();
 
         // reset the doable sections for each gta
         labSectionAnalyzer.setInfoForEachGTA();
