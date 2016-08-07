@@ -1,8 +1,7 @@
 Time Scheduler
 ==============
 
-[![Build Status](https://travis-ci.org/luo149/time-scheduler.svg?branch=master)](https://travis-ci.org/luo149/time-scheduler)
-
+[![Build Status](https://travis-ci.org/luo149/time-scheduler-with-gradle.svg?branch=master)](https://travis-ci.org/luo149/time-scheduler-with-gradle)
 What’s time scheduler?
 ----------------------
 
