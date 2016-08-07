@@ -2,9 +2,7 @@ language: java
 
 
 script:
-- ./gradlew check
-- ./gradlew assemble
-- ./gradlew b
+- ./gradlew check --stacktrace
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
