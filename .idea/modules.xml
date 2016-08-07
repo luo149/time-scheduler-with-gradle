@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Time-Scheduler.iml" filepath="$PROJECT_DIR$/.idea/modules/Time-Scheduler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Time-Scheduler_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Time-Scheduler_main.iml" group="Time-Scheduler" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Time-Scheduler_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Time-Scheduler_test.iml" group="Time-Scheduler" />
+    </modules>
+  </component>
+</project>
