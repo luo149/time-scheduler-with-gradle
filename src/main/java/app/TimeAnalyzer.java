@@ -17,14 +17,14 @@ public class TimeAnalyzer{
     private static final int MEETING = 1;
     private static final int LAB_ASSIGNMENT = 2;
 
-    private static final String USAGE = "Usage: java timeAnalyzer filename";
+    private static final String USAGE = "Usage: java TimeAnalyzer filename";
     private static final String MENU = "*********** Menu ***********\n\n" +
             "1. Decide a time for meeting\n" +
             "2. Decide schedule for lab assignment\n";
 
     public static void main(String[] args){
         // Check if user has passed enough arguments
-        if (args.length < 2){
+        if (args.length < 1){
             System.out.println(USAGE);
             System.exit(1);
         }

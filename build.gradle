@@ -5,8 +5,6 @@ apply plugin: 'application'
 
 sourceCompatibility = 1.7
 
-mainClassName = 'app.Start'
-
 repositories {
     mavenCentral()
 }
@@ -15,6 +13,26 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
-run{
+task runStart(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
     standardInput = System.in
+    main = 'app.Start'
+}
+
+task runPoll(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+    main = 'app.Poll'
+
+    // arguments to pass to the application
+    args 'testPoll_At_?.csv'
+}
+
+task runTimeAnalyzerForLabAssignment(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+    main = 'app.TimeAnalyzer'
+
+    // arguments to pass to the application
+    args 'testLabAssignment_GTA.csv'
 }
